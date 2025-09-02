@@ -1,0 +1,10 @@
+{
+  "name": "fabaro-karaoke-openverse",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node download_openverse.mjs",
+    "start": "npx serve public -l 5173"
+  }
+}
