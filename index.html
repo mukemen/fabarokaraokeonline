@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karaoke PWA</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#111827">
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif; margin:0; background:#0b1220; color:#fff; }
+    header { padding:16px; display:flex; gap:12px; align-items:center; justify-content:space-between; border-bottom:1px solid #1f2a44;}
+    .btn { background:#2563eb; color:#fff; border:none; padding:10px 14px; border-radius:12px; font-weight:600; cursor:pointer; }
+    .btn:disabled { opacity:.5 }
+    main { padding:16px; display:grid; gap:16px; max-width:720px; margin:auto; }
+    .card { background:#0f172a; border:1px solid #1f2a44; border-radius:16px; padding:16px; }
+    .row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    input[type="range"]{ width:160px; }
+    #lyrics { font-size:20px; line-height:1.5; min-height:140px; white-space:pre-wrap; }
+    .current { color:#60a5fa; font-weight:800; }
+    footer { padding:12px; font-size:12px; opacity:.7; text-align:center; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>🎤 Karaoke PWA</strong>
+    <button id="installBtn" class="btn" hidden>Install</button>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="row">
+        <label>Instrumental:
+          <input type="file" id="fileAudio" accept="audio/*">
+        </label>
+        <input type="url" id="urlAudio" placeholder="atau tempel URL MP3" style="min-width:240px">
+        <button id="loadAudio" class="btn">Muat</button>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <label>Lirik (.lrc):
+          <input type="file" id="fileLrc" accept=".lrc,text/plain">
+        </label>
+        <button id="loadLrcSample" class="btn" title="Contoh lirik">Contoh LRC</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row" style="justify-content:space-between">
+        <strong>🎵 Playlist Bebas Lisensi</strong>
+        <button id="reloadPlaylist" class="btn">↻ Muat Ulang</button>
+      </div>
+      <div id="playlist" style="display:grid; gap:8px; margin-top:8px"></div>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <button id="play" class="btn">▶️ Play</button>
+        <button id="pause" class="btn">⏸️ Pause</button>
+        <button id="stop" class="btn">⏹️ Stop</button>
+        <label>Vol Musik <input type="range" id="musicVol" min="0" max="1" step="0.01" value="0.8"></label>
+        <label>Vol Mic <input type="range" id="micVol" min="0" max="1" step="0.01" value="1"></label>
+        <label>Echo <input type="range" id="echo" min="0" max="1" step="0.01" value="0.2"></label>
+        <span id="time">00:00 / 00:00</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <div id="lyrics">Unggah lirik .lrc untuk sinkron otomatis.</div>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <button id="recStart" class="btn">⏺️ Rekam</button>
+        <button id="recStop" class="btn" disabled>⏹️ Selesai</button>
+        <a id="downloadLink" download="karaoke.webm" style="display:none" class="btn">⬇️ Download Rekaman</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Made with Web Audio API • Optimized for Android • Works offline (PWA)</footer>
+
+  <audio id="player" crossorigin="anonymous"></audio>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
