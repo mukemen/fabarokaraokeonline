@@ -1,1 +1,44 @@
-
+[
+  {
+    "title": "Battle Ready",
+    "artist": "Bryan Teoh",
+    "url": "/songs/Battle Ready.mp3",
+    "license": "CC0 - FreePD/Pixabay",
+    "lrc": null
+  },
+  {
+    "title": "Think About It",
+    "artist": "Bryan Teoh",
+    "url": "/songs/Think About It.mp3",
+    "license": "CC0 - FreePD/Pixabay",
+    "lrc": null
+  },
+  {
+    "title": "The Ice Giants",
+    "artist": "Kevin MacLeod",
+    "url": "/songs/The Ice Giants.mp3",
+    "license": "CC0 - FreePD/Pixabay",
+    "lrc": null
+  },
+  {
+    "title": "Heroic Adventure",
+    "artist": "Rafael Krux",
+    "url": "/songs/Heroic Adventure.mp3",
+    "license": "CC0 - FreePD/Pixabay",
+    "lrc": null
+  },
+  {
+    "title": "Bumbly March",
+    "artist": "Kevin MacLeod",
+    "url": "/songs/Bumbly March.mp3",
+    "license": "CC0 - FreePD/Pixabay",
+    "lrc": null
+  },
+  {
+    "title": "Epic Adventure",
+    "artist": "Yuriy Bespalov",
+    "url": "/songs/Epic Adventure.mp3",
+    "license": "CC0 - FreePD/Pixabay",
+    "lrc": null
+  }
+]
